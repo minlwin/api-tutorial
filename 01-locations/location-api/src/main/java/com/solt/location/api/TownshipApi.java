@@ -22,26 +22,26 @@ public class TownshipApi {
 	private TownshipRepo repo;
 
 	@GetMapping
-	private List<Township> findAll(){
+	public List<Township> findAll(){
 		return repo.findAll();
 	}
 	@GetMapping("districts/{id}")
-	private List<Township> findByDistrictId(@PathVariable int id) {
+	public List<Township> findByDistrictId(@PathVariable int id) {
 		return repo.findByDistrictId(id);
 	}
 	
 	@GetMapping("{id:\\d+}")
-	private Township findById(@PathVariable int id) {
+	public Township findById(@PathVariable int id) {
 		return repo.findById(id).orElseThrow();
 	}
 	
 	@PostMapping
-	private Township create (@RequestBody Township d) {
+	public Township create (@RequestBody Township d) {
 		return repo.save(d);
 	}
 	
 	@PutMapping
-	private Township save (@RequestBody Township d) {
+	public Township save (@RequestBody Township d) {
 		return repo.save(d);
 	}
 

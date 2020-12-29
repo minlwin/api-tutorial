@@ -6,4 +6,6 @@ import com.solt.location.model.entity.Division;
 
 public interface DivisionRepo extends JpaRepository<Division, Integer> {
 
+	Division findOneByName(String name);
+
 }
